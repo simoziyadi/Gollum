@@ -1,0 +1,21 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+    <form id="formAdd" action="{{ path('create') }}" method="post">
+        <table>
+            <tr>
+                <td><label for="ribValue">Rib :</label></td>
+                <td><input id="ribValue" name="rib" type="text" required="required"/></td>
+            </tr>
+            <tr>
+                <td><label for="soldeValue">Solde :</label></td>
+                <td><input id="soldeValue" name="solde" type="number"/></td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit">Valider</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+{% endblock %}
+

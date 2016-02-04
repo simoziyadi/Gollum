@@ -1,0 +1,21 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+    <div>
+        <table border="1">
+            <tr>
+                <th>Id</th>
+                <th>Montant</th>
+                <th>Type</th>
+                <th>Compte</th>
+            </tr>
+            {% for op in operations %}
+                <tr>
+                    <td>{{ op.id }}</td>
+                    <td>{{ op.montant }}</td>
+                    <td>{{ op.type }}</td>
+                    <td>{{ op.compte.rib }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
