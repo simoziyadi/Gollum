@@ -13,3 +13,4 @@ before_script:
 
 notifications:
   email: med.ahamada@mit.co.ma
+  slack: travisci: T4k7lDZSrNjGm4tje17Mbmro
