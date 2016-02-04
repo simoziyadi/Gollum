@@ -1,0 +1,3 @@
+mit_finance_homepage:
+    path:     /
+    defaults: { _controller: MITFinanceBundle:Default:index }
