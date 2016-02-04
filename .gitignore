@@ -39,4 +39,6 @@
 # Composer PHAR
 /composer.phar
 
+/.idea
+/nbproject
 /rt
