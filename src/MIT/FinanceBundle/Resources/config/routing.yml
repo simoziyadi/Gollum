@@ -1,3 +1,43 @@
 mit_finance_homepage:
     path:     /
     defaults: { _controller: MITFinanceBundle:Default:index }
+
+
+
+verAddCompte:
+    path:     /ajouter
+    defaults: {_controller: MITFinanceBundle:Compte:versCreate}
+
+create:
+    path:     /create
+    defaults: {_controller: MITFinanceBundle:Compte:create}
+
+versModifierCompte:
+    path: /versModifierCompte/{id}
+    defaults: {_controller: MITFinanceBundle:Compte:versUpdate}
+
+updateCompte:
+     path: /updateCompte/{id}
+     defaults: {_controller: MITFinanceBundle:Compte:update}
+
+supprimerCompte:
+    path: /supprimerCompte/{id}
+    defaults: {_controller: MITFinanceBundle:Compte:supprimer}
+
+listComptes:
+    path:     /Comptes
+    defaults: {_controller: MITFinanceBundle:Compte:list}
+
+versAddOperation:
+    path:   /versAddOperation
+    defaults: {_controller: MITFinanceBundle:Operation:versCreate}
+
+saveOperation:
+    path:   /saveOperation
+    defaults: {_controller: MITFinanceBundle:Operation:create}
+
+getOperationsByCompte:
+    path: /operationsByCompte/{id}
+    defaults: {_controller: MITFinanceBundle:Operation:findByCompte}
+
+
