@@ -12,3 +12,7 @@ _errors:
 
 _main:
     resource: routing.yml
+
+## AcmeDemoBundle routes (to be removed)
+#_acme_demo:
+#      resource: "@AcmeDemoBudnle/Resources/config/routing.yml"

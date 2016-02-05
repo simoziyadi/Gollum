@@ -5,7 +5,3 @@ app:
     resource: "@AppBundle/Resources/config/routing.yml"
     prefix:   /
 
-bean:
-    resource: "@beanBundle/Resources/config/routing.yml"
-    prefix:   /
-

@@ -1,0 +1,45 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+    <form id="formAdd" action="{{ path('create') }}" method="post">
+        <table>
+            <tr>
+                <td><label for="ribValue">Rib :</label></td>
+                <td><input id="ribValue" name="rib" type="text" required="required"/></td>
+            </tr>
+            <tr>
+                <td><label for="soldeValue">Solde :</label></td>
+                <td><input id="soldeValue" name="solde" type="number"/></td>
+            </tr>
+            <tr>
+                <td>
+                    <button  class="btn btn-success" type="submit">Valider</button>
+                </td>
+                <td>
+
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div id="result"></div>
+    <button id="ajax" class="btn btn-info">Ajax</button>
+{% endblock %}
+
+{% block javascripts %}
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#ajax').click(function(){
+            $.ajax({
+                url: 'http://localhost/Gollum/web/app_dev.php/finance/Comptes',
+                success: function(result) {
+                    console.log(result);
+                    var compteSize = result.data.length;
+                    $('#result').html(compteSize + ' Comptes trouvés.');
+                },
+                error: function(error){
+                    alert('error');
+                }
+            })
+        });
+    })
+</script>
+{% endblock %}

@@ -3,6 +3,7 @@
 namespace MIT\FinanceBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use MIT\FinanceBundle\Entity\Compte;
 
 /**
  * CompteRepository
@@ -12,4 +13,35 @@ use Doctrine\ORM\EntityRepository;
  */
 class CompteRepository extends EntityRepository
 {
+
+    public function save(Compte $compte)
+    {
+        $this->_em->persist($compte);
+        $this->_em->flush();
+    }
+
+    /**
+     * @param $id
+     * @return Compte|null
+     */
+    public function findCompte($id)
+    {
+        $compte = $this->find($id);
+        return $compte;
+    }
+
+    public function update(Compte $compte)
+    {
+        $this->_em->merge($compte);
+        $this->_em->flush();
+    }
+
+    public function removeCompteWithOps(Compte $compte)
+    {
+        $operationRepository = $this->_em->getRepository("MITFinanceBundle:Operation");
+        $operationRepository->removeOperationByCompte($compte->getId());
+        $this->_em->remove($compte);
+        $this->_em->flush();
+    }
+
 }

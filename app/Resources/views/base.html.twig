@@ -7,11 +7,20 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         {% javascripts 
             "%kernel.root_dir%/Resources/assets/js/*" 
-            "%kernel.root_dir%/Resources/assets/bower_components/jquery/dist/jquery.min.js" 
-            "%kernel.root_dir%/Resources/assets/bower_components/bootstrap/dist/js/bootstrap.min.js"             
+            "%kernel.root_dir%/Resources/assets/bower_components/jquery/dist/jquery.min.js"
+            "%kernel.root_dir%/Resources/assets/bower_components/bootstrap/dist/js/bootstrap.min.js"
         output='assets/js/compiled/main.js' %}
-            <script src="{{ asset('assets/js/main.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('assets/js/compiled/main.js') }}" type="text/javascript"></script>
         {% endjavascripts %}
+
+        {%  stylesheets
+            "%kernel.root_dir%/Resources/assets/bower_components/bootstrap/dist/css/bootstrap.min.css"
+            "%kernel.root_dir%/Resources/assets/bower_components/bootstrap/dist/css/bootstrap-theme.min.css"
+            "%kernel.root_dir%/Resources/assets/css/custom.css"
+            output="assets/css/compiled/main.css" filter="cssrewrite"
+        %}
+            <link href="{{ asset('assets/css/compiled/main.css') }}" rel="stylesheet">
+        {% endstylesheets %}
     </head>
     <body>
         {% block body %}{% endblock %}
