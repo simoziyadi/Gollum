@@ -29,7 +29,7 @@
     $(document).ready(function(){
         $('#ajax').click(function(){
             $.ajax({
-                url: 'http://localhost/Gollum/web/app_dev.php/Comptes',
+                url: 'http://localhost/Gollum/web/app_dev.php/finance/Comptes',
                 success: function(result) {
                     console.log(result);
                     var compteSize = result.data.length;
