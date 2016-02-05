@@ -40,16 +40,16 @@ class CompteController extends Controller
     {
         if($request->isXmlHttpRequest())
         {
-            $result =  $this->getDoctrine()->getRepository("beanBundle:Compte")->findAll();
+            $result =  $this->getDoctrine()->getRepository("MITFinanceBundle:Compte")->findAll();
             return new JsonResponse(array('data'=> $result));
         }
-        $comptes = $this->getDoctrine()->getRepository("beanBundle:Compte")->findAll();
+        $comptes = $this->getDoctrine()->getRepository("MITFinanceBundle:Compte")->findAll();
         return $this->render('MITFinanceBundle:Compte:listComptes.html.twig', array('comptes' => $comptes));
     }
 
     public function versUpdateAction($id)
     {
-        $compte = $this->getDoctrine()->getRepository("beanBundle:Compte")->find($id);
+        $compte = $this->getDoctrine()->getRepository("MITFinanceBundle:Compte")->find($id);
         return $this->render("MITFinanceBundle:Compte:modifierCompte.httml.twig", array('compte' => $compte));
     }
 
