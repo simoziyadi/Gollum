@@ -8,10 +8,13 @@ class DefaultControllerTest extends WebTestCase
 {
     public function testIndex()
     {
-        $client = static::createClient();
+        $client = self::createClient();
 
-        $crawler = $client->request('GET', '/');
+        $client->request('GET', '/');
 
-        $this->assertContains('Hello World', $client->getResponse()->getContent());
+        $this->assertTrue(
+                        $client->getResponse()->isSuccessful(),
+            sprintf('The %s public URL loads correctly.', '/')
+        );
     }
 }
