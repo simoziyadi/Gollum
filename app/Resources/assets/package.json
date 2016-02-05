@@ -1,0 +1,19 @@
+{
+  "name": "gollum_assets",
+  "version": "1.0.0",
+  "description": "Gollum Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/multiinfo/Gollum.git"
+  },
+  "author": "MedAhamada <horadja@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/multiinfo/Gollum/issues"
+  },
+  "homepage": "https://github.com/multiinfo/Gollum#readme"
+}
