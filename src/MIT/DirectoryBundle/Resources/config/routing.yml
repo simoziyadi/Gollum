@@ -1,0 +1,3 @@
+mit_directory_homepage:
+    path:     /
+    defaults: { _controller: MITDirectoryBundle:Default:index }
