@@ -1,6 +1,6 @@
 mit_directory:
     resource: "@MITDirectoryBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /financeTest
 
 mit_finance:
     resource: "@MITFinanceBundle/Resources/config/routing.yml"
