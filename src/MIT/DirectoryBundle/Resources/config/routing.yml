@@ -1,3 +1,6 @@
 mit_directory_homepage:
     path:     /
     defaults: { _controller: MITDirectoryBundle:Default:index }
+listesComptes:
+    path: /listeComptes
+    defaults: { _controller:MITDirectoryBundle:Compte:listComptes}
