@@ -7,10 +7,16 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Operation
  *
- * @ORM\Table(name="operationtest")
+ *@ORM\Table(name="operationtest")
  * @ORM\Entity(repositoryClass="MIT\DirectoryBundle\Repository\OperationRepository")
+ * ORM\InheritanceType("SINGLE_TABLE")
+ * ORM\DiscriminatorColumn(name="discr", type="string")
+ * @ORM\DiscriminatorMap({
+ *     "retraitt" = "Retrait",
+ *     "versement" = "Versement"
+ *         })
  */
-Abstract class Operation
+abstract class Operation
 {
     /**
      * @var int
