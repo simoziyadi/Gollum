@@ -4,3 +4,12 @@ mit_directory_homepage:
 listesComptes:
     path: /listeComptes
     defaults: { _controller:MITDirectoryBundle:Compte:listComptes}
+addCompte:
+    path: /addCompte
+    defaults: { _controller:MITDirectoryBundle:Compte:addCompte}
+update_Compte:
+    path: /updateCompte/{id}
+    defaults: { _controller:MITDirectoryBundle:Compte:updateCompte}
+remove_Compte:
+    path: /removeCompte/{id}
+    defaults: { _controller:MITDirectoryBundle:Compte:removeCompte}
