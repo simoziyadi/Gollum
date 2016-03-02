@@ -1,0 +1,38 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+    <div>
+        <a href="{{ path('addCompte') }}">create a new  acount</a>
+    </div>
+    {% if cptes is not empty %}
+    <table border="2" width="60%" align="center" >
+        <caption>Listes des comptes</caption>
+        <thead>
+        <tr>
+            <th>Numéro de compte</th>
+            <th>solde</th>
+            <th>date création</th>
+            <th>modification</th>
+            <th>suprission</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for compte in cptes  %}
+                <tr>
+                    <td>{{ compte.numero }} </td>
+                    <td>{{ compte.solde }} DH</td>
+                    <td>{{ compte.dateCreation | date }}</td>
+                    <td><a href="{{ path('update_Compte',{'id':compte.id}) }}">modifier</a></td>
+                    <td><a href="{{ path('remove_Compte',{'id':compte.id}) }}">supprimer</a></td>
+                </tr>
+
+
+            {% endfor %}
+        </tbody>
+
+
+    </table>
+        {% else %}
+        La liste des comptes est vide
+        {% endif %}
+
+{% endblock  %}
