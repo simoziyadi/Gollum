@@ -33,7 +33,7 @@ class CompteController extends Controller
     public function addCompteAction(Request $request)
     {
         $compte = new Compte();
-        $form = $this->get('form.factory')->create(new CompteType(), $compte);
+        $form = $this->createForm(new CompteType(), $compte);
         $form->handleRequest($request);
         if ($form->isValid()) {
             try {
