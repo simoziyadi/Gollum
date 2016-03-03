@@ -7,7 +7,7 @@ use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class CompteType extends AbstractType
+class CompteEditeType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -16,24 +16,16 @@ class CompteType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('numero')
-            ->add('solde')
-            ->add('save','submit')
-        ;
-    }
-    
-    /**
-     * @param OptionsResolver $resolver
-     */
-    public function configureOptions(OptionsResolver $resolver)
-    {
-        $resolver->setDefaults(array(
-            'data_class' => 'MIT\DirectoryBundle\Entity\Compte'
-        ));
+            ->remove('dateCreation', DateTimeType::class);
     }
 
-    public function  getName()
+    public function getParent()
     {
-        return 'mit_directory_bundle_compte';
+        return new CompteType();
+    }
+
+    public function getName()
+    {
+        return 'mit_directory_bundle_compte_edite';
     }
 }

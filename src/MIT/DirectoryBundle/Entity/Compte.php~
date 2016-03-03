@@ -10,7 +10,6 @@ use Doctrine\Common\Collections\ArrayCollection;
  *
  * @ORM\Table(name="comptetest")
  * @ORM\Entity(repositoryClass="MIT\DirectoryBundle\Repository\CompteRepository")
- * @ORM\HasLifecycleCallbacks
  */
 class Compte
 {
@@ -128,53 +127,5 @@ class Compte
     {
         return $this->dateCreation;
     }
-
-    /**
-     * ORM\PrePersist
-     */
-    public function createdAt(){
-        $this->setDateCreation(new \DateTime());
-
-    }
     
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->operations = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add operations
-     *
-     * @param \MIT\DirectoryBundle\Entity\Operation $operations
-     * @return Compte
-     */
-    public function addOperation(\MIT\DirectoryBundle\Entity\Operation $operations)
-    {
-        $this->operations[] = $operations;
-
-        return $this;
-    }
-
-    /**
-     * Remove operations
-     *
-     * @param \MIT\DirectoryBundle\Entity\Operation $operations
-     */
-    public function removeOperation(\MIT\DirectoryBundle\Entity\Operation $operations)
-    {
-        $this->operations->removeElement($operations);
-    }
-
-    /**
-     * Get operations
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getOperations()
-    {
-        return $this->operations;
-    }
 }
